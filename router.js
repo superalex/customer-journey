@@ -13,9 +13,6 @@ Router.route('/projects', {
   },
   data: function () {
     return projects.reactive()
-  },
-  action: function () {
-    this.render('projects')
   }
 });
 
@@ -23,12 +20,17 @@ Router.route('/projects/:slug', {
   name: 'project',
   waitOn: function () {
     return Meteor.subscribe('project', this.params.slug)
+    return Meteor.subscribe('issues', this.params.slug)
   },
   data: function () {
-    return project.reactive()
+    return {
+      project: project.reactive(),
+      issues: issues.reactive()
+    }
   },
-  action: function () {
-    project.change(this.params.slug);
-    this.render('project')
+  onBeforeAction: function () {
+    issues.change(this.params.slug)
+    project.change(this.params.slug)
+    this.next()
   }
 });

@@ -1,5 +1,10 @@
 <template name="project">
-  {{#each this}}
-    {{name}}
+  {{ project.name }}
+
+  <ul>
+  {{#each issues}}
+    <li>{{ subject }}</li>
   {{/each}}
+  </ul>
+
 </template>
