@@ -1,1 +1,2 @@
-projects = new PgSubscription('projects_project');
+projects = new PgSubscription('projects');
+project = new PgSubscription('project');

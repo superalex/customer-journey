@@ -1,0 +1,10 @@
+<template name="projects">
+  <h2>Overview</h2>
+
+  <ul>
+  {{#each this}}
+    <li><a href="{{ pathFor route='project' }}">{{name}}</a></li>
+  {{/each}}
+  </ul>
+
+</template>
