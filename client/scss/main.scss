@@ -12,8 +12,15 @@
     height: 40px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    cursor: grabbing;
-    cursor: -webkit-grabbing;
+
+    &.child {
+      cursor: grabbing;
+      cursor: -webkit-grabbing;
+    }
+
+    &.header {
+      background: #eee;
+    }
   }
 
   .sortable-placeholder {
@@ -26,6 +33,7 @@
 }
 
 .overview-parent-children {
+  margin-top: 40px;
   .group {
     width: 400px;
     float: left;
