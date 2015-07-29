@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .sortable {
   li {
     display: block;
@@ -5,11 +9,18 @@
     border: solid 1px gray;
     width: 400px;
     overflow: hidden;
-    height: 24px;
+    height: 40px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    cursor: grabbing;
-    cursor: -webkit-grabbing;
+
+    &.child {
+      cursor: grabbing;
+      cursor: -webkit-grabbing;
+    }
+
+    &.header {
+      background: #eee;
+    }
   }
 
   .sortable-placeholder {
@@ -19,4 +30,21 @@
   li + li {
     margin-top: 5px;
   }
+}
+
+.overview-parent-children {
+  margin-top: 40px;
+  .group {
+    width: 400px;
+    float: left;
+  }
+
+  .group + .group {
+    margin-left: 30px;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }
