@@ -1,6 +1,6 @@
 # Customer Journey, a meteor app for strategic planning
 
-Requirements: Taiga, Postgres, Meteor
+Requirements: [Taiga](http://taiga.io), Postgres, Meteor
 
 This app provides a board to visualize a customer journey. Each column represents a touchpoint and can be populated with User Stories from Taiga.
 
@@ -14,3 +14,12 @@ This app provides a board to visualize a customer journey. Each column represent
 }
 ```
 - meteor --settings config/settings.json
+
+*This is in a very early phase of development*
+###Roadmap
+- Dashboard per project
+- Drag and drop interface for ordering the User Stories per touchpoint
+- Assigning of User Stories to sprints
+- Calculation of total points per sprint / per touchpoint
+- Drawing a metro-map style line for related stories in different touchpoints
+- Django app for Taiga to provide fields in taiga for data from this planner
