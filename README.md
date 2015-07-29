@@ -1,4 +1,4 @@
-# customer-journey, a meteor app for strategic planning
+# Customer Journey, a meteor app for strategic planning
 
 Requirements: Taiga, Postgres, Meteor
 
