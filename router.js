@@ -25,16 +25,19 @@ Router.route('/projects/:slug', {
   waitOn: function () {
     return [
       Meteor.subscribe('projects', this.params.slug),
-      Meteor.subscribe('journeys', this.params.slug)
+      Meteor.subscribe('journeys', this.params.slug),
+      Meteor.subscribe('issues', this.params.slug)
     ]
   },
   data: function () {
     return {
       project: projects.reactive(),
+      issues: issues.reactive(),
       journeys: journeys.find({ project_slug: this.params.slug })
     }
   },
   onBeforeAction: function () {
+    issues.change(this.params.slug)
     projects.change(this.params.slug)
     this.next()
   }

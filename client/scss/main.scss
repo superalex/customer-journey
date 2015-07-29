@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .sortable {
   li {
     display: block;
@@ -5,7 +9,7 @@
     border: solid 1px gray;
     width: 400px;
     overflow: hidden;
-    height: 20px;
+    height: 40px;
     text-overflow: ellipsis;
     white-space: nowrap;
     cursor: grabbing;
@@ -19,4 +23,20 @@
   li + li {
     margin-top: 5px;
   }
+}
+
+.overview-parent-children {
+  .group {
+    width: 400px;
+    float: left;
+  }
+
+  .group + .group {
+    margin-left: 30px;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }
