@@ -4,4 +4,10 @@
 
   <a href="{{ pathFor route='add-customer-journey' data=project }}">Create a new customer journey</a>
 
+  <ul>
+  {{#each journeys }}
+    <li>{{ name }}</li>
+  {{/each}}
+  </ul>
+
 </template>

@@ -2,8 +2,9 @@ Template.project.helpers({
   project: function () {
     return this.project[0]
   },
-  issues: function () {
-    return this.issues
+  journeys: function () {
+    console.log(this.journeys.fetch())
+    return this.journeys
   }
 })
 

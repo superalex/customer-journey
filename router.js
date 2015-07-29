@@ -31,7 +31,7 @@ Router.route('/projects/:slug', {
   data: function () {
     return {
       project: projects.reactive(),
-      journeys: journeys.find({ slug: this.params.slug })
+      journeys: journeys.find({ project_slug: this.params.slug })
     }
   },
   onBeforeAction: function () {
@@ -56,11 +56,11 @@ Router.route('/projects/:slug/add-customer-journey', {
   }
 })
 
-Router.route('/projects/:slug/:id', {
+Router.route('/projects/:slug/:journey_id', {
   name: 'customer-journey',
   waitOn: function () {
     return [
-      Meteor.subscribe('journeys', this.params.id),
+      Meteor.subscribe('journeys', this.params.journey_id),
       Meteor.subscribe('projects', this.params.slug),
       Meteor.subscribe('issues', this.params.slug)
     ]
@@ -69,7 +69,7 @@ Router.route('/projects/:slug/:id', {
     return {
       project: projects.reactive(),
       issues: issues.reactive(),
-      journey: journeys.findOne({ id: this.params.id })
+      journey: journeys.findOne({ journey_id: this.params.journey_id })
     }
   },
   onBeforeAction: function () {
