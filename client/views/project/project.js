@@ -4,39 +4,43 @@ Template.project.helpers({
       return this.project[0]
     }
   },
-  journeys: function () {
-    return this.journeys
-  }
-})
-
-Template.project.rendered = function () {
-  var that = this
-  Meteor.setTimeout(function () {
-    var overview = createParentChildsOverview()
+  overview: function () {
+    var groups = []
 
     var backlogItems = []
 
-    _.each(that.data.issues, function (issue) {
+    _.each(this.issues, function (issue) {
       backlogItems.push(issue)
     })
 
-    overview.addGroup({
+    groups.push({
       name: 'Backlog',
       id: '_none',
       weight: -99,
       children: backlogItems
     })
 
-    _.each(that.data.journeys.fetch(), function (journey) {
-      overview.addGroup({
+    _.each(this.journeys.fetch(), function (journey) {
+      groups.push({
         name: journey.name,
         id: journey._id,
         children: journey.children
       })
     })
 
-    overview.change = function () {}
+    return groups
+  },
+})
 
-    overview.init($('.overview-parent-children')[0])
-  }, 100)
+Template.project.rendered = function () {
+  setTimeout(function () {
+    $('.overview-parent-children ul').sortable({
+      items: '.child',
+      connectWith: 'group'
+    })
+
+    .bind('sortupdate', function(e, ui) {
+
+    })
+  }, 1000)
 }

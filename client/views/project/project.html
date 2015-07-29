@@ -4,6 +4,20 @@
 
   <a href="{{ pathFor route='add-customer-journey' data=project }}">Create a new customer journey</a>
 
-  <div class="overview-parent-children sortable"></div>
+  <div class="overview-parent-children sortable">
+    {{#each overview }}
+      <ul class="group">
+        <li class="header">
+          {{ name }}
+        </li>
+
+        {{#each children }}
+        <li class="child">
+          {{ subject }}
+        </li>
+        {{/each}}
+      </ul>
+    {{/each}}
+  </div>
 
 </template>
