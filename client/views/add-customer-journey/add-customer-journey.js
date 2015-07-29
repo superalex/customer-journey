@@ -12,9 +12,8 @@ Template.AddCustomerJourney.events({
       description: customerJourneyDescription
     })
 
-    Router.go('customer-journey', {
-      slug: slug,
-      journey_id: journey_id
+    Router.go('project', {
+      slug: slug
     })
   }
 })

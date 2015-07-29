@@ -6,9 +6,6 @@ Template.project.helpers({
   },
   journeys: function () {
     return this.journeys
-  },
-  slug: function () {
-    return 'test'
   }
 })
 
