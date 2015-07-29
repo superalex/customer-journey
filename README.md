@@ -2,4 +2,4 @@
 
 Requirements: Taiga, Postgres, Meteor
 
-This app provides a board to visualize a customer journey. Each column represents a touchpoint
+This app provides a board to visualize a customer journey. Each column represents a touchpoint and can be populated with User Strories from Taiga.
