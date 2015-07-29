@@ -1,3 +1,5 @@
 projects = new PgSubscription('projects');
-project = new PgSubscription('project');
 issues = new PgSubscription('issues');
+
+journeys = new Mongo.Collection("journeys")
+// touchPoints = new Mongo.Collection("touchpoints")

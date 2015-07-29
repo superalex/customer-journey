@@ -7,14 +7,19 @@ var closeAndExit = function() {
 process.on('SIGTERM', closeAndExit)
 process.on('SIGINT', closeAndExit)
 
-Meteor.publish('projects', function(){
-  return liveDb.select('SELECT * FROM projects_project ORDER BY name ASC')
-})
-
-Meteor.publish('project', function(slug){
-  return liveDb.select("SELECT * FROM projects_project WHERE slug = $1", [slug])
+Meteor.publish('projects', function(slug){
+  if (slug) {
+    return liveDb.select("SELECT * FROM projects_project WHERE slug = $1", [slug])
+  }
+  else {
+    return liveDb.select('SELECT * FROM projects_project ORDER BY name ASC')
+  }
 })
 
 Meteor.publish('issues', function(slug){
   return liveDb.select("SELECT * FROM userstories_userstory INNER JOIN projects_project ON (projects_project.id = userstories_userstory.project_id) WHERE slug = $1", [slug])
 })
+
+Meteor.publish('journeys', function (slug) {
+  return journeys.find({ slug: slug })
+});

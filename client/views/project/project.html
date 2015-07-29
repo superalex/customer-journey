@@ -2,10 +2,6 @@
 
   {{ project.name }}
 
-  <ul class="sortable">
-    {{#each issues}}
-      <li>{{ subject }}</li>
-    {{/each}}
-  </ul>
+  <a href="{{ pathFor route='customer-journey.new' data=project }}">Create a new customer journey</a>
 
 </template>

@@ -1,0 +1,11 @@
+<template name="customerJourney">
+
+  {{ project.name }}
+
+  <ul class="sortable">
+    {{#each issues}}
+      <li>{{ subject }}</li>
+    {{/each}}
+  </ul>
+
+</template>
