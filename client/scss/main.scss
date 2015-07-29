@@ -1,0 +1,21 @@
+.sortable {
+  li {
+    display: block;
+    padding: 10px;
+    border: solid 1px gray;
+    width: 400px;
+    overflow: hidden;
+    height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: grabbing;
+  }
+
+  .sortable-placeholder {
+    border: dashed 1px #ddd;
+  }
+
+  li + li {
+    margin-top: 5px;
+  }
+}

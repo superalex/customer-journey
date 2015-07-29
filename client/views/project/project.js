@@ -6,3 +6,9 @@ Template.project.helpers({
     return this.issues
   }
 })
+
+Template.project.rendered = function () {
+  Meteor.setTimeout(function () {
+    $('.sortable').sortable()
+  }, 1000)
+}

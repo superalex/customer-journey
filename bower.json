@@ -1,8 +1,9 @@
 {
   "name": "customer-journey",
   "version": "0.0.1",
-  "dependencies": {
-    "html5sortable": "farhadi/html5sortable"
-  },
-  "private": true
+  "dependencies": {},
+  "private": true,
+  "ignoredDependencies": [
+    "jquery"
+  ]
 }

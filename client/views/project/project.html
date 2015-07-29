@@ -2,10 +2,10 @@
 
   {{ project.name }}
 
-  <ul>
-  {{#each issues}}
-    <li>{{ subject }}</li>
-  {{/each}}
+  <ul class="sortable">
+    {{#each issues}}
+      <li>{{ subject }}</li>
+    {{/each}}
   </ul>
 
 </template>
