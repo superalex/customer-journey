@@ -20,6 +20,6 @@ Meteor.publish('issues', function(slug){
   return liveDb.select("SELECT * FROM userstories_userstory INNER JOIN projects_project ON (projects_project.id = userstories_userstory.project_id) WHERE slug = $1", [slug])
 })
 
-Meteor.publish('journeys', function (slug) {
-  return journeys.find({ slug: slug })
+Meteor.publish('journeys', function (project_slug) {
+  return journeys.find({ project_slug: project_slug })
 });

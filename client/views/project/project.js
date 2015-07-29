@@ -1,10 +1,14 @@
 Template.project.helpers({
   project: function () {
-    return this.project[0]
+    if (this.project) {
+      return this.project[0]
+    }
   },
   journeys: function () {
-    console.log(this.journeys.fetch())
     return this.journeys
+  },
+  slug: function () {
+    return 'test'
   }
 })
 
